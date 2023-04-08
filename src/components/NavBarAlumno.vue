@@ -2,7 +2,7 @@
   <div>
     <v-app-bar color="#384FFE">
       <v-container fluid>
-        <v-row class="d-flex justify-start align-center flex-nowrap">
+        <v-row class="d-flex justify-start align-center">
             <v-col class="text-left" cols="6">
               <v-img src="@/img/logoTec.png" height="70" width="200"></v-img>
             </v-col>
@@ -12,6 +12,9 @@
               </v-btn>
               <v-btn style="color: white" to="/Materias">
                 Lista de materias
+              </v-btn>
+              <v-btn to="/Login">
+                <img src="@/img/logout-variant.svg" height="25" width="25" alt="hola">
               </v-btn>
             </v-col>
 

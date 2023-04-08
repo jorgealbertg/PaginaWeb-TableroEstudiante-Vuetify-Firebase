@@ -1,4 +1,5 @@
 <template>
+  <NavBarAlumno></NavBarAlumno>
   <v-app>
     <v-container fill-height>
       <v-row class="flex-wrap" justify="center" align="center">
@@ -52,6 +53,7 @@
 
 <script>
 import firebase from "firebase/compat";
+import NavBarAlumno from '@/components/NavBarAlumno.vue'
 
 export default{
   async mounted() {
@@ -85,6 +87,9 @@ export default{
 
 
 
+  },
+  components:{
+    NavBarAlumno
   }
 
 
