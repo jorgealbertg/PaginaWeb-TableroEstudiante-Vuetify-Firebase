@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "titulo": "Título de la Materia 1",
+    "profesor": "Cristiano Ronaldo 1",
+    "salon": "La Congeladora 1",
+    "dias": "Lunes, Miércoles & Viernes",
+    "horario" : "7:00 - 9:00"
+  },
+  {
+    "id": 2,
+    "titulo": "Título de la Materia 2",
+    "profesor": "Cristiano Ronaldo 2",
+    "salon": "La Congeladora 2",
+    "dias": "Lunes, Miércoles & Viernes",
+    "horario" : "7:00 - 9:00"
+  },
+  {
+    "id": 3,
+    "titulo": "Título de la Materia 3",
+    "profesor": "Cristiano Ronaldo 3",
+    "salon": "La Congeladora 3",
+    "dias": "Lunes, Miércoles & Viernes",
+    "horario" : "7:00 - 9:00"
+  },
+  {
+    "id": 4,
+    "titulo": "Título de la Materia 4",
+    "profesor": "Cristiano Ronaldo 4",
+    "salon": "La Congeladora 4",
+    "dias": "Lunes, Miércoles & Viernes",
+    "horario": "7:00 - 9:00"
+  },
+  {
+    "id": 5,
+    "titulo": "Título de la Materia 5",
+    "profesor": "Cristiano Ronaldo 5",
+    "salon": "La Congeladora 5",
+    "dias": "Lunes, Miércoles & Viernes",
+    "horario": "7:00 - 9:00"
+  },
+
+  {
+    "id": 6,
+    "titulo": "Título de la Materia 6",
+    "profesor": "Cristiano Ronaldo 6",
+    "salon": "La Congeladora 6",
+    "dias": "Lunes, Miércoles & Viernes",
+    "horario": "7:00 - 9:00"
+  }
+]
