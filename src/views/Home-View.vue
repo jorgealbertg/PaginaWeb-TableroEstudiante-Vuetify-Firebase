@@ -50,8 +50,46 @@
 
 </template>
 
-<script setup>
+<script>
+import firebase from "firebase/compat";
 
+export default{
+  async mounted() {
+    await this.logIn();
+    await this.createFirestoreDocForNewUser();
+  },
+
+  methods: {
+    async logIn() {
+      await firebase.auth().signInWithEmailAndPassword('test@test.com','123456');
+
+    },
+
+
+    async createFirestoreDocForNewUser() {
+      let email = firebase.auth().currentUser.email;
+
+      //Crear un documento con un Id Personalizado (email)
+      // await firebase.firestore().collection('users').doc(email).set({
+      //   'name': 'Juan Escutia',
+      //   'lastLogIn' : Date.now(),
+      // })
+
+      //Crear un documento con un Id Generado por el Sistema (token) Default
+      // await firebase.firestore().collection('users').add({
+      //   'name': 'Juan Escutia',
+      //   'email': email,
+      //   'lastLogIn' : Date.now(),
+      // })
+    }
+
+
+
+  }
+
+
+
+};
 </script>
 
 <style>

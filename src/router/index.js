@@ -1,7 +1,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from "../views/Home.vue"
-import Materias from "../views/Materias.vue"
+import Home from "../views/Home-View.vue"
+import Materias from "../views/Materias-View.vue"
 
 const routes = [
   {
