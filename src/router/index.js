@@ -2,7 +2,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from "../views/Home.vue"
 import Materias from "../views/Materias.vue"
-import Materia from "../views/Materia.vue"
 
 const routes = [
   {
@@ -14,11 +13,6 @@ const routes = [
     path: "/materias",
     name: "Materias",
     component: Materias
-  },
-  {
-    path: "/materia/:id", //Los ":" es para que sea dinámico
-    name: "Materia",
-    component: Materia
   }
 ]
 
