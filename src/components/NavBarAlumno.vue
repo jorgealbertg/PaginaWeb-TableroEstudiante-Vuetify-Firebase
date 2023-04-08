@@ -13,7 +13,7 @@
               <v-btn style="color: white" to="/Materias">
                 Lista de materias
               </v-btn>
-              <v-btn to="/Login">
+              <v-btn @click="logout">
                 <img src="@/img/logout-variant.svg" height="25" width="25" alt="hola">
               </v-btn>
             </v-col>
@@ -25,7 +25,22 @@
 </template>
 
 <script>
+import firebase from "firebase/compat";
+import router from '@/router'
 
+export default {
+  methods: {
+    logout() {
+      firebase.auth().signOut().then(() => {
+        router.push("/Login")
+
+      }).catch((error) => {
+        // Ha ocurrido un error al cerrar la sesión
+        console.error(error);
+      });
+    }
+  }
+};
 </script>
 
 <style>

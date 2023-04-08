@@ -10,7 +10,9 @@
       </v-row>
       <v-row class="d-flex justify-center align-center pt-2 flex-sm-row flex-column">
         <v-col class="text-center" cols="12">
-          <v-avatar size="200" image="@/img/juanEscutia.jpeg"></v-avatar>
+          <v-avatar size="200">
+            <img :src="'https://firebasestorage.googleapis.com/v0/b/vue-a01770619.appspot.com/o/juanEscutia.jpeg?alt=media&token=3b050175-2f7b-499c-9a4b-9d713e59e43f'" alt="Descripción de la imagen">
+          </v-avatar>
         </v-col>
       </v-row>
 
@@ -53,7 +55,9 @@
 
 <script>
 import firebase from "firebase/compat";
+
 import NavBarAlumno from '@/components/NavBarAlumno.vue'
+
 
 export default{
   async mounted() {

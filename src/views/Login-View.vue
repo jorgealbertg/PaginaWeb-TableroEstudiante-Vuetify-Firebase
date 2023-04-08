@@ -15,7 +15,7 @@
         type="password"
         required
       ></v-text-field>
-      <v-btn type="submit" color="primary">Iniciar sesión</v-btn>
+      <v-btn type="submit" color="primary" :disabled="!emailRules.every(rule => rule(this.email) === true) || !passwordRules.every(rule => rule(this.password) === true)">Iniciar sesión</v-btn>
     </v-form>
 
     <v-dialog ref="dialog" v-model="dialogVisible">
