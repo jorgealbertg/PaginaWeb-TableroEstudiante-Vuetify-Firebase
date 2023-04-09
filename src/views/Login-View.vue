@@ -1,33 +1,46 @@
 <template>
   <NavBarAuth></NavBarAuth>
-  <v-container>
-    <v-form @submit.prevent="login">
-      <v-text-field
-        v-model="email"
-        label="Correo Institucional"
-        :rules="emailRules"
-        required
-      ></v-text-field>
-      <v-text-field
-        v-model="password"
-        label="Contraseña"
-        :rules="passwordRules"
-        type="password"
-        required
-      ></v-text-field>
-      <v-btn type="submit" color="primary" :disabled="!emailRules.every(rule => rule(this.email) === true) || !passwordRules.every(rule => rule(this.password) === true)">Iniciar sesión</v-btn>
-    </v-form>
 
-    <v-dialog ref="dialog" v-model="dialogVisible">
-      <v-card>
-        <v-card-title>Error de inicio de sesión</v-card-title>
-        <v-card-text>Credenciales inválidas</v-card-text>
-        <v-card-actions>
-          <v-btn color="primary" @click="dialogVisible = false">Cerrar</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+  <v-dialog ref="dialog" v-model="dialogVisible">
+    <v-card>
+      <v-card-title>Error de inicio de sesión</v-card-title>
+      <v-card-text>Credenciales inválidas</v-card-text>
+      <v-card-actions>
+        <v-btn color="primary" @click="dialogVisible = false">Cerrar</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+
+  <v-container>
+    <v-card>
+      <v-card-title>
+        Inicio de Sesión
+      </v-card-title>
+      <v-card-text>
+        <v-form @submit.prevent="login">
+          <v-text-field
+            v-model="email"
+            label="Correo Institucional"
+            :rules="emailRules"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="password"
+            label="Contraseña"
+            :rules="passwordRules"
+            type="password"
+            required
+          ></v-text-field>
+          <v-btn type="submit" color="primary" :disabled="!emailRules.every(rule => rule(this.email) === true) || !passwordRules.every(rule => rule(this.password) === true)">Iniciar sesión</v-btn>
+        </v-form>
+
+      </v-card-text>
+    </v-card>
+
   </v-container>
+
+
+
 </template>
 
 <script>

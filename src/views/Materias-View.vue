@@ -9,8 +9,8 @@
   </v-container>
 
   <div>
-    <TarjetaMateria v-for="(item, index) in items" :key="index" :titulo="item.titulo.toString()" :profesor="item.profesor.toString()"
-                    :salon="item.salon.toString()" :dias="item.dias.toString()" :horario="item.horario.toString()">
+    <TarjetaMateria v-for="(item, index) in items" :key="index" :titulo="item.titulo" :profesor="item.profesor"
+                    :salon="item.salon" :dias="item.dias" :horario="item.horario">
     </TarjetaMateria>
   </div>
 
@@ -18,8 +18,8 @@
 
 <script >
 import TarjetaMateria from '@/components/TarjetaMateria.vue'
-import datosJson from '@/data/data.json'
 import NavBarAlumno from '@/components/NavBarAlumno.vue'
+import firebase from "firebase/compat";
 
 export default {
   components:{
@@ -28,10 +28,22 @@ export default {
   },
   data() {
     return {
-        items: datosJson,
+        items:[]
     };
   },
+  mounted() {
+    const db = firebase.firestore();
+    const materiasRef = db.collection('materias');
 
+    // Obtener todos los documentos de la colección
+    materiasRef.get().then((querySnapshot) => {
+      const materias = [];
+      querySnapshot.forEach((doc) => {
+        materias.push(doc.data());
+      });
+      this.items = materias; // Asignar los datos al array de Vue
+    });
+  },
 
 };
 
