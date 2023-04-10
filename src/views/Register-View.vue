@@ -15,7 +15,7 @@
   </v-dialog>
 
   <v-container>
-    <v-card>
+    <v-card class="mx-auto" style="max-width: 900px; width: 100%; border-radius: 25px;">
       <v-card-title>Crea una cuenta</v-card-title>
       <v-card-text>
         <v-form ref="form" v-model="valid">

@@ -11,8 +11,8 @@
     </v-card>
   </v-dialog>
 
-  <v-container>
-    <v-card>
+  <v-container class="d-flex justify-center">
+    <v-card class="mx-auto" style="max-width: 900px; width: 100%; border-radius: 25px;">
       <v-card-title>
         Inicio de Sesión
       </v-card-title>
@@ -31,7 +31,7 @@
             type="password"
             required
           ></v-text-field>
-          <v-btn type="submit" color="primary" :disabled="!emailRules.every(rule => rule(this.email) === true) || !passwordRules.every(rule => rule(this.password) === true)">Iniciar sesión</v-btn>
+          <v-btn  type="submit" color="primary" :disabled="!emailRules.every(rule => rule(this.email) === true) || !passwordRules.every(rule => rule(this.password) === true)">Iniciar sesión</v-btn>
         </v-form>
 
       </v-card-text>
