@@ -14,7 +14,7 @@
                 Lista de materias
               </v-btn>
               <v-btn @click="logout">
-                <img src="@/img/logout-variant.svg" height="25" width="25" alt="hola">
+                <img src="@/imgs/logout-variant.svg" height="25" width="25" alt="hola">
               </v-btn>
             </v-col>
 
