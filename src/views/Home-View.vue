@@ -11,7 +11,7 @@
       <v-row class="d-flex justify-center align-center pt-2 flex-sm-row flex-column">
         <v-col class="text-center" cols="12">
           <v-avatar size="200">
-            <img :src="'https://firebasestorage.googleapis.com/v0/b/vue-a01770619.appspot.com/o/juanEscutia.jpeg?alt=media&token=3b050175-2f7b-499c-9a4b-9d713e59e43f'" alt="Descripción de la imagen">
+            <img :src="'https://firebasestorage.googleapis.com/v0/b/vue-a01770619.appspot.com/o/juanEscutia.jpeg?alt=media&token=3b050175-2f7b-499c-9a4b-9d713e59e43f'" alt="Porlapatria">
           </v-avatar>
         </v-col>
       </v-row>
@@ -54,57 +54,18 @@
 </template>
 
 <script>
-import firebase from "firebase/compat";
-
 import NavBarAlumno from '@/components/NavBarAlumno.vue'
 
 
 export default{
-  async mounted() {
-    await this.logIn();
-    await this.createFirestoreDocForNewUser();
-  },
-
-  methods: {
-    async logIn() {
-      await firebase.auth().signInWithEmailAndPassword('test@test.com','123456');
-
-    },
-
-
-    async createFirestoreDocForNewUser() {
-      let email = firebase.auth().currentUser.email;
-
-      //Crear un documento con un Id Personalizado (email)
-      // await firebase.firestore().collection('users').doc(email).set({
-      //   'name': 'Juan Escutia',
-      //   'lastLogIn' : Date.now(),
-      // })
-
-      //Crear un documento con un Id Generado por el Sistema (token) Default
-      // await firebase.firestore().collection('users').add({
-      //   'name': 'Juan Escutia',
-      //   'email': email,
-      //   'lastLogIn' : Date.now(),
-      // })
-    }
-
-
-
-  },
   components:{
     NavBarAlumno
   }
-
-
 
 };
 </script>
 
 <style>
-.bordes-marcados{
-  border: 1px solid black;
-}
 .titulo-home{
   font-size: 35px;
   font-weight: bold;

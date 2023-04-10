@@ -35,12 +35,13 @@ export default {
         router.push("/Login")
 
       }).catch((error) => {
-        // Ha ocurrido un error al cerrar la sesión
+        // En caso de ocurrir un error al cerrar sesión
         console.error(error);
       });
     }
   }
 };
+
 </script>
 
 <style>

@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <v-main>
-
       <router-view />
     </v-main>
   </v-app>
@@ -9,5 +8,5 @@
 
 <script>
 </script>
-<style scoped>
+<style>
 </style>
