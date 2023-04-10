@@ -101,6 +101,7 @@ export default {
         router.push('/');
         })
         .catch((error) => {
+          console.error(error)
           // En caso de que haya un error al iniciar la sesión
           this.dialogVisible = true; // Abrimos el diálogo de error
         });

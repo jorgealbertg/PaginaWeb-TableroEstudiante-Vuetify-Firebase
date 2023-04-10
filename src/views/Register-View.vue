@@ -26,6 +26,30 @@
     </v-card>
   </v-dialog>
 
+
+  <v-dialog v-model="dialogVisible2">
+    <v-card class="mx-auto" style="max-width: 900px; width: 100%; border-radius: 25px;">
+      <v-row class="d-flex justify-center">
+        <v-col class="d-flex align-center justify-center" cols="6">
+          <v-card-title>
+            <span class="titulo-dialog">Error de Registro</span>
+          </v-card-title>
+        </v-col>
+      </v-row>
+      <v-row class="d-flex justify-center">
+        <v-col class="d-flex align-center justify-center" cols="12">
+          <v-card-text>
+            <span class="text-dialog">El registro no se pudo realizar debido a que el correo ya se encuentra asociado a un usuario existente dentro de la base de datos.</span>
+          </v-card-text>
+        </v-col>
+      </v-row>
+
+      <v-card-actions>
+        <v-btn color="primary" @click="dialogVisible2 = false">Cerrar</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+
   <div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
     <v-card class="card-tamano">
       <v-container>
@@ -45,8 +69,8 @@
               <v-text-field v-model="personalEmail" label="Correo Personal" required :rules="emailRules"></v-text-field>
               <v-text-field v-model="password" label="Contraseña" type="password" required :rules="passwordRules"></v-text-field>
               <v-text-field v-model="confirmPassword" label="Confirmar Contraseña" type="password" required :rules="confirmPasswordRules"></v-text-field>
-              <v-row justify="center" >
-                <v-col cols="5" class="py-0"  >
+              <v-row justify="start" >
+                <v-col cols="12" class="py-0"  >
                   <v-checkbox v-model="termsAndConditions" label="Aceptar términos y condiciones" required :rules="termsRules"></v-checkbox>
                 </v-col>
               </v-row>
@@ -105,6 +129,7 @@ export default {
 
       // estado del formulario aquí
       showSuccessDialog: false,
+      dialogVisible2: false,
     }
   },
   methods: {
@@ -135,8 +160,9 @@ export default {
               })
           })
           .catch((error) => {
-            // En caso de error al registrar el correo institucional y la contraseña en Firebase
             console.error(error)
+            // En caso de error al registrar el correo institucional y la contraseña en Firebase
+            this.dialogVisible2 = true;
           })
       }
     }
